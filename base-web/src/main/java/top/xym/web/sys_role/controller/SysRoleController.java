@@ -30,14 +30,13 @@ public class SysRoleController {
     }
 
     // 编辑
-    @PostMapping("/edit")
+    @PutMapping()
     @Operation(summary = "编辑角色")
     public ResultVo<?> edit(@RequestBody SysRole sysRole) {
         if (sysRoleService.updateById(sysRole)) {
             return ResultUtils.success("编辑成功！");
         }
         return ResultUtils.error("编辑失败！");
-
     }
 
     // 删除
@@ -50,9 +49,9 @@ public class SysRoleController {
         return ResultUtils.error("删除失败！");
     }
 
-    @PostMapping("/gitList")
+    @PostMapping("/getList")
     @Operation(summary = "查询角色列表")
-    public ResultVo<?> gitList(@RequestBody RoleParm parm) {
+    public ResultVo<?> getList(@RequestBody RoleParm parm) {
         IPage<SysRole> page = new Page<>(parm.getCurrentPage(), parm.getPageSize());
         // 构造查询条件
         QueryWrapper<SysRole> query = new QueryWrapper<>();
