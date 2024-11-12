@@ -104,7 +104,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper , SysUser> imp
             menuList = sysMenuService.getMenuByUserId(parm.getUserId());
         }
 //查询⻆⾊原来的菜单
-        List<SysMenu> roleList = sysMenuService.getMenuByRoleId(parm.getRoleId());
+        List<SysMenu> roleList = sysMenuService.getMenuByRoleId(parm.getRoleId
+                ());
         List<Long> ids = new ArrayList<>();
         Optional.ofNullable(roleList).orElse(new ArrayList<>())
                 .stream()
