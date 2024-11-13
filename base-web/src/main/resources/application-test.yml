@@ -46,3 +46,12 @@ knife4j:
     enable: true
     username: admin
     password: 123456
+
+# jwt配置
+jwt:
+  #颁发者
+  issuer: xym
+  #密钥
+  secret: top.xym
+  #60分钟过期
+  expiration: 60
